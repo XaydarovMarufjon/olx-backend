@@ -15,7 +15,7 @@ export class Ad extends Document {
   @Prop()
   location: string;
 
-  @Prop({ unique: true })   // duplicate'larni oldini olish uchun
+  @Prop({ unique: true })  
   link: string;
 
   @Prop()

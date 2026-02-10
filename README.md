@@ -7,6 +7,8 @@ Ishlatib ko'ring --->
 
 ```bash
 $ npm install
+
+$ npm install mongodb
 ```
 
 ## Compile and run the project
@@ -30,4 +32,4 @@ http://localhost:3000/scraper/run
 # NATIJA
 http://localhost:3000/scraper/ads
 
-
+```
