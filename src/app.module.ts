@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from '@nestjs/schedule';
 import { HttpModule } from '@nestjs/axios';
@@ -13,7 +13,13 @@ import { AppController } from './app.controller';
     ScheduleModule.forRoot(),
     HttpModule,
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot('mongodb+srv://marufjankhaydarov_db_user:os3zLPT1srdXeXq3@cluster0.jfahtih.mongodb.net/?appName=Cluster0'),
+    MongooseModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        uri: config.get<string>('MONGODB_URI'),
+      }),
+    }),
+
     ScraperModule,
     KeywordModule,
   ],

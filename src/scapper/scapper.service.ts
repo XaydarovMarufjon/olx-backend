@@ -15,7 +15,7 @@ export class ScraperService {
     private readonly configService: ConfigService,
   ) {
      this.baseUrl = this.configService.get<string>('URL') || '';
-  }
+    }
 
   async scrapeKeyword(keyword: string, pageNumber = 1): Promise<number> {
     const url = `${this.baseUrl}/list/q-${encodeURIComponent(keyword)}/?page=${pageNumber}`;
@@ -47,7 +47,7 @@ export class ScraperService {
 
       /// Tekshiruv: barcha potentsial elementlar
       const cards = $('[data-cy="l-card"], [data-testid="adCard"], div[class*="offer"]', );
-      this.logger.log(`"${keyword}" uchun topilgan karta soni: ${cards.length}`,  );
+      this.logger.log(`"${keyword}" uchun topilgan cardlar soni: ${cards.length}`,  );
 
       if (cards.length === 0) {
         this.logger.warn(`"${keyword}" bo‘yicha hech qanday e’lon topilmadi`);
