@@ -8,11 +8,7 @@ Ishlatib ko'ring --->
 ```bash
 $ npm install
 
-$ npm install mongodb
-
-$ npm i playwright
 $ npx playwright install chromium  "yoki" $ npx playwright install
-$ npm i @nestjs/config
 ```
 
 ## Compile and run the project
@@ -26,9 +22,6 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-
-
-
 ```
 
 ## USE ( ishlatib korish )

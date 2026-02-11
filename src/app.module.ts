@@ -5,8 +5,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { HttpModule } from '@nestjs/axios';
 import { ScraperModule } from './scapper/scapper.module';
 import { KeywordModule } from './keyword/keyword.module';
-import { AppService } from './app.service';
-import { AppController } from './app.controller';
+
 
 @Module({
   imports: [
@@ -19,11 +18,10 @@ import { AppController } from './app.controller';
         uri: config.get<string>('MONGODB_URI'),
       }),
     }),
-
     ScraperModule,
     KeywordModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule { }
